@@ -1,7 +1,7 @@
 import { WalletType } from "graz";
-import { cosmoshub, osmosis, quicksilver, regen, stargaze } from "./chains";
+import { cosmoshub, quicksilver } from "./testnet";
 
-export const chains = [quicksilver, cosmoshub, osmosis, stargaze, regen];
+export const chains = [quicksilver, cosmoshub];
 
 export const listedWallets = {
   [WalletType.KEPLR]: {
@@ -20,27 +20,15 @@ export const listedWallets = {
 
 export const listedChains = [
   {
-    name: "Cosmos Hub",
-    chainId: cosmoshub.chainId,
-    imgSrc: "/assets/chains/cosmoshub.png",
+    name: "Quicksilver Testnet",
+    chainId: quicksilver.chainId,
+    imgSrc: "/assets/chains/quicksilver.png",
     stakeDenom: "uqatom",
   },
   {
-    name: "Osmosis",
-    chainId: osmosis.chainId,
-    imgSrc: "/assets/chains/osmosis.png",
-    stakeDenom: "uqosmo",
-  },
-  {
-    name: "Stargaze",
-    chainId: stargaze.chainId,
-    imgSrc: "/assets/chains/stargaze.png",
-    stakeDenom: "uqstars",
-  },
-  {
-    name: "Regen",
-    chainId: regen.chainId,
-    imgSrc: "/assets/chains/regen.png",
-    stakeDenom: "uqregen",
+    name: "Cosmos Hub Testnet",
+    chainId: cosmoshub.chainId,
+    imgSrc: "/assets/chains/cosmoshub.png",
+    stakeDenom: "uqatom",
   },
 ];

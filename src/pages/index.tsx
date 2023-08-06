@@ -22,6 +22,7 @@ import {
   Text,
   VStack,
   keyframes,
+  useColorMode,
   useDisclosure,
   useToast,
 } from "@chakra-ui/react";
@@ -40,7 +41,7 @@ import {
   useSuggestChain,
 } from "graz";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useMutation } from "react-query";
 
 export default function Home() {
@@ -100,6 +101,13 @@ export default function Home() {
     box-shadow: 0 0 3px #f9ede6, 0 0 10px #f9ede6, 0 0 20px #f9ede6, 0 0 40px #be4900,
       0 0 70px #be4900, 0 0 80px #be4900;
   }`;
+
+  const { colorMode, setColorMode } = useColorMode();
+  useEffect(() => {
+    if (colorMode === "light") {
+      setColorMode("dark");
+    }
+  }, [colorMode, setColorMode]);
 
   return (
     <DarkMode>

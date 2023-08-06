@@ -30,6 +30,7 @@ import { fromBech32, toBech32 } from "@cosmjs/encoding";
 import {
   WalletType,
   getChain,
+  getWallet,
   truncate,
   useAccount,
   useBalance,
@@ -72,6 +73,15 @@ export default function Home() {
   const suggest = useSuggestChain();
 
   const handleSuggestAndConnect = async (walletType: WalletType) => {
+    try {
+      getWallet(walletType);
+    } catch (error) {
+      toast({
+        title: "Wallet not found",
+        description: `Please install ${walletType} first.`,
+        status: "error",
+      });
+    }
     await Promise.all(
       chains.map(async (chain) => {
         await suggest.suggestAsync({

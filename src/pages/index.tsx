@@ -4,6 +4,7 @@ import {
   Button,
   Center,
   Code,
+  DarkMode,
   HStack,
   Heading,
   Image,
@@ -101,7 +102,7 @@ export default function Home() {
   }`;
 
   return (
-    <>
+    <DarkMode>
       <Center h="100vh">
         <Stack
           w="container.sm"
@@ -379,7 +380,7 @@ export default function Home() {
           </ModalBody>
         </ModalContent>
       </Modal>
-    </>
+    </DarkMode>
   );
 }
 

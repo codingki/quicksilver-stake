@@ -1,5 +1,5 @@
 import type { AppProps } from "next/app";
-import { ChakraProvider, DarkMode } from "@chakra-ui/react";
+import { ChakraProvider } from "@chakra-ui/react";
 import { theme } from "@/styles/theme";
 import { GrazProvider, WalletType } from "graz";
 import { chains } from "@/constants/graz";
@@ -17,9 +17,7 @@ export default function App({ Component, pageProps }: AppProps) {
         }}
       >
         <ChakraProvider theme={theme}>
-          <DarkMode>
-            <Component {...pageProps} />
-          </DarkMode>
+          <Component {...pageProps} />
         </ChakraProvider>
       </GrazProvider>
     </QueryClientProvider>
